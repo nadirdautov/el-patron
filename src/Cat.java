@@ -1,10 +1,45 @@
-package com.company.gb;
+package com.company;
 
-public class Cat extends Animal {
-    public static int counter = 0;
+class Cat {
+    private String name;
+    private int appetite;
+    private int satietyTime;
+    private int satiety;
 
-    public Cat(String name, int maxDistanceForRun, int maxDistanceForSwim) {
-        super(name, maxDistanceForRun, 0);
-        counter++;
+    public void setSatiety(int satiety) {
+        this.satiety = satiety;
     }
+
+    public Cat(String name, int appetite, int satietyTime) {
+        this.name = name;
+        this.appetite = appetite;
+        this.satietyTime = satietyTime;
+        this.satiety = 0;
+    }
+    void eat(Plate p) {
+        p.decreaseFood(appetite);
+        satiety += satietyTime;
+    }
+
+    public void setSatietyTime(int satietyTime) {
+        this.satietyTime = satietyTime;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    int getAppetite() {
+        return appetite;
+    }
+
+    int getSatietyTime() {
+        return satietyTime;
+    }
+
+    int getSatiety() {
+        return satiety;
+    }
+
+
 }
